@@ -9,27 +9,15 @@ passport.use(
       callbackURL: "http://localhost:3000/auth/github/callback"
     },
     function(accessToken, refreshToken, profile, done) {
-      const onError = () => {
-        console.log('Ocorreu um erro!')
-      }
-
-      return done(onError, profile);
+      return done(undefined, profile);
     }
   )
 );
 
 passport.serializeUser(function(user, done) {
-  const onError = () => {
-    console.log('Ocorreu um erro!')
-  }
-
-  done(onError, user);
+  done(undefined, user);
 });
 
 passport.deserializeUser(function(user, done) {
-  const onError = () => {
-    console.log('Ocorreu um erro!')
-  }
-
-  done(onError, user);
+  done(undefined, user);
 });
